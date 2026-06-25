@@ -346,7 +346,7 @@ img, video { max-width: 100%; display: block; }
 .cat-card--nsfw:hover { border-color: var(--danger); }
 
 .cat-info { padding: 16px 18px 18px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.cat-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; display: block; }
+.cat-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; display: block; color: var(--text); }
 .cat-count { font-size: 0.75rem; color: var(--text-dim); white-space: nowrap; }
 
 .about {
