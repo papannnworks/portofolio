@@ -56,9 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
           obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -10px 0px' });
 
     document.querySelectorAll('[data-scramble]').forEach(el => obs.observe(el));
+
+    requestAnimationFrame(() => {
+      document.querySelectorAll('[data-scramble]').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          obs.unobserve(el);
+          scrambleLoop(el);
+        }
+      });
+    });
 
     const barObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
