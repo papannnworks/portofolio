@@ -131,15 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/artist/01.jpg', alt: 'Art work 01' },
         { src: 'assets/images/artist/02.jpg', alt: 'Art work 02' },
         { src: 'assets/images/artist/03.jpg', alt: 'Art work 03' },
+        { src: 'assets/images/artist/04.jpg', alt: 'Art work 04' },
+        { src: 'assets/images/artist/05.jpg', alt: 'Art work 05' },
+        { src: 'assets/images/artist/06.jpg', alt: 'Art work 06' },
       ]
     },
     graphics: {
       label: 'Graphics Designer',
-      count: '5 works',
+      count: '1 works',
       images: [
         { src: 'assets/images/graphics/01.jpg', alt: 'Graphics design 01' },
-        { src: 'assets/images/graphics/02.jpg', alt: 'Graphics design 02' },
-        { src: 'assets/images/graphics/03.jpg', alt: 'Graphics design 03' },
       ]
     },
     animation: {
@@ -147,7 +148,6 @@ document.addEventListener('DOMContentLoaded', () => {
       count: '4 works',
       images: [
         { src: 'assets/images/animation/01.mp4', alt: '2D Animation 01', type: 'video' },
-        { src: 'assets/images/animation/02.mp4', alt: '2D Animation 02', type: 'video' },
       ]
     },
     photography: {
@@ -157,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/photography/01.jpg', alt: 'Photography 01' },
         { src: 'assets/images/photography/02.jpg', alt: 'Photography 02' },
         { src: 'assets/images/photography/03.jpg', alt: 'Photography 03' },
+        { src: 'assets/images/photography/04.jpg', alt: 'Photography 04' },
       ]
     },
     nsfw: {
@@ -166,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/nsfw/01.jpg', alt: 'NSFW work 01' },
         { src: 'assets/images/nsfw/02.jpg', alt: 'NSFW work 02' },
         { src: 'assets/images/nsfw/03.jpg', alt: 'NSFW work 03' },
+        { src: 'assets/images/nsfw/04.jpg', alt: 'NSFW work 04' },
       ]
     }
   };
