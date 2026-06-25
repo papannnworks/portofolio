@@ -139,8 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
       label: '2D Animation',
       count: '4 works',
       images: [
-        { src: 'assets/images/animation/01.jpg', alt: '2D Animation 01' },
-        { src: 'assets/images/animation/02.jpg', alt: '2D Animation 02' },
+        { src: 'assets/images/animation/01.mp4', alt: '2D Animation 01', type: 'video' },
+        { src: 'assets/images/animation/02.mp4', alt: '2D Animation 02', type: 'video' },
       ]
     },
     compositing: {
@@ -210,11 +210,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const fig = document.createElement('figure');
       fig.className = 'gallery-item';
       fig.style.margin = '0';
-      const i = document.createElement('img');
-      i.src = img.src;
-      i.alt = img.alt;
-      i.loading = 'lazy';
-      fig.appendChild(i);
+
+      if (img.type === 'video') {
+        fig.classList.add('gallery-item--video');
+        const v = document.createElement('video');
+        v.src = img.src;
+        v.controls = true;
+        v.loop = true;
+        v.muted = true;
+        v.playsInline = true;
+        v.setAttribute('aria-label', img.alt);
+        fig.appendChild(v);
+      } else {
+        const i = document.createElement('img');
+        i.src = img.src;
+        i.alt = img.alt;
+        i.loading = 'lazy';
+        fig.appendChild(i);
+      }
+
       galleryGrid.appendChild(fig);
     });
   }
