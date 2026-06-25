@@ -94,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initScramble();
 
+  // Seek animation card thumbnail to 3s for a proper preview frame
+  document.querySelectorAll('.cat-thumb-video').forEach(v => {
+    v.addEventListener('loadedmetadata', () => {
+      v.currentTime = Math.min(3, v.duration * 0.1);
+    });
+  });
+
   const burger = document.getElementById('navBurger');
   const mobileNav = document.getElementById('navMobile');
 
@@ -143,14 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/animation/02.mp4', alt: '2D Animation 02', type: 'video' },
       ]
     },
-    compositing: {
-      label: '2D Compositing',
-      count: '3 works',
-      images: [
-        { src: 'assets/images/compositing/01.jpg', alt: 'Compositing 01' },
-        { src: 'assets/images/compositing/02.jpg', alt: 'Compositing 02' },
-      ]
-    },
     photography: {
       label: 'Photography',
       count: '3 works',
@@ -158,14 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/photography/01.jpg', alt: 'Photography 01' },
         { src: 'assets/images/photography/02.jpg', alt: 'Photography 02' },
         { src: 'assets/images/photography/03.jpg', alt: 'Photography 03' },
-      ]
-    },
-    pctweaker: {
-      label: 'PC Tweaks',
-      count: 'Before / After',
-      images: [
-        { src: 'assets/images/pctweaker/01.jpg', alt: 'PC Tweaks 01' },
-        { src: 'assets/images/pctweaker/02.jpg', alt: 'PC Tweaks 02' },
       ]
     },
     nsfw: {
@@ -219,7 +210,12 @@ document.addEventListener('DOMContentLoaded', () => {
         v.loop = true;
         v.muted = true;
         v.playsInline = true;
+        v.preload = 'metadata';
         v.setAttribute('aria-label', img.alt);
+        // Seek to 1s so browser renders a real frame as poster/thumbnail
+        v.addEventListener('loadedmetadata', () => {
+          v.currentTime = Math.min(3, v.duration * 0.1);
+        });
         fig.appendChild(v);
       } else {
         const i = document.createElement('img');
